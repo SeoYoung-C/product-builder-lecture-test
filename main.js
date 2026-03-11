@@ -1,8 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
     const generateBtn = document.getElementById("generate-btn");
     const container = document.getElementById("lotto-container");
+    const themeToggle = document.getElementById("theme-toggle");
 
-    // 번호에 따른 색상 클래스 반환
+    // --- 테마 전환 기능 ---
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        themeToggle.innerText = "☀️";
+    }
+
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        const isDark = document.body.classList.contains("dark-mode");
+        themeToggle.innerText = isDark ? "☀️" : "🌙";
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+
+    // --- 로또 추첨 기능 ---
     function getBallColorClass(num) {
         if (num <= 10) return "ball-yellow";
         if (num <= 20) return "ball-blue";
@@ -11,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return "ball-green";
     }
 
-    // 1~45 중 중복 없는 6개 숫자 생성
     function generateLottoNumbers() {
         const numbers = [];
         while (numbers.length < 6) {
@@ -20,18 +34,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 numbers.push(num);
             }
         }
-        // 오름차순 정렬
         return numbers.sort((a, b) => a - b);
     }
 
-    // 버튼 클릭 이벤트
     generateBtn.addEventListener("click", () => {
         const lottoNumbers = generateLottoNumbers();
-        
-        // 기존 내용 삭제
         container.innerHTML = "";
 
-        // 번호 공 생성 및 애니메이션과 함께 추가
         lottoNumbers.forEach((num, index) => {
             setTimeout(() => {
                 const ball = document.createElement("div");
@@ -39,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ball.classList.add(getBallColorClass(num));
                 ball.innerText = num;
                 container.appendChild(ball);
-            }, index * 100); // 0.1초 간격으로 순차적으로 등장
+            }, index * 100);
         });
     });
 });

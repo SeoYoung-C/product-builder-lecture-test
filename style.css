@@ -1,3 +1,22 @@
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --card-bg: white;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --btn-bg: #1a73e8;
+    --btn-hover: #1557b0;
+}
+
+/* 다크 모드 변수 */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #f1f1f1;
+    --card-bg: #1e1e1e;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --btn-bg: #37474f;
+    --btn-hover: #455a64;
+}
+
 body {
     font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     display: flex;
@@ -5,19 +24,35 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f8f9fa;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 12px;
+    transition: all 0.3s;
 }
 
 #app {
     text-align: center;
     padding: 3rem;
-    background: white;
+    background: var(--card-bg);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px var(--shadow);
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 h1 {
-    color: #333;
     margin-bottom: 2rem;
 }
 
@@ -29,7 +64,6 @@ h1 {
     min-height: 60px;
 }
 
-/* 로또 공 스타일 */
 .ball {
     width: 50px;
     height: 50px;
@@ -44,17 +78,16 @@ h1 {
     animation: bounce 0.5s ease;
 }
 
-/* 번호대별 색상 (한국 로또 기준) */
-.ball-yellow { background-color: #fbc400; } /* 1-10 */
-.ball-blue { background-color: #69c8f2; }   /* 11-20 */
-.ball-red { background-color: #ff7272; }    /* 21-30 */
-.ball-gray { background-color: #aaa; }      /* 31-40 */
-.ball-green { background-color: #b0d840; }  /* 41-45 */
+.ball-yellow { background-color: #fbc400; }
+.ball-blue { background-color: #69c8f2; }
+.ball-red { background-color: #ff7272; }
+.ball-gray { background-color: #aaa; }
+.ball-green { background-color: #b0d840; }
 
 #generate-btn {
     padding: 12px 24px;
     font-size: 1.1rem;
-    background-color: #1a73e8;
+    background-color: var(--btn-bg);
     color: white;
     border: none;
     border-radius: 8px;
@@ -63,7 +96,7 @@ h1 {
 }
 
 #generate-btn:hover {
-    background-color: #1557b0;
+    background-color: var(--btn-hover);
 }
 
 #generate-btn:active {
