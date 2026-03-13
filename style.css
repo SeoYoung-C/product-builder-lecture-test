@@ -7,7 +7,6 @@
     --btn-hover: #1557b0;
 }
 
-/* 다크 모드 변수 */
 body.dark-mode {
     --bg-color: #121212;
     --text-color: #f1f1f1;
@@ -29,52 +28,65 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.theme-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: 2px solid var(--text-color);
-    color: var(--text-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 5px 10px;
-    border-radius: 12px;
-    transition: all 0.3s;
-}
-
 #app {
+    position: relative; /* 버튼 배치를 위해 추가 */
     text-align: center;
-    padding: 3rem;
+    padding: 4rem 3rem 3rem 3rem; /* 상단 여백 추가 */
     background: var(--card-bg);
     border-radius: 20px;
     box-shadow: 0 10px 30px var(--shadow);
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: all 0.3s;
+    min-width: 320px;
+}
+
+.theme-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--bg-color);
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.theme-btn:hover {
+    transform: rotate(15deg) scale(1.1);
 }
 
 h1 {
     margin-bottom: 2rem;
+    font-size: 1.8rem;
 }
 
 #lotto-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 2rem;
+    gap: 12px;
+    margin-bottom: 2.5rem;
     min-height: 60px;
+    flex-wrap: wrap; /* 모바일 대응 */
 }
 
 .ball {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-weight: bold;
-    font-size: 1.2rem;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    font-size: 1.1rem;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
     animation: bounce 0.5s ease;
 }
 
@@ -85,18 +97,20 @@ h1 {
 .ball-green { background-color: #b0d840; }
 
 #generate-btn {
-    padding: 12px 24px;
+    padding: 14px 28px;
     font-size: 1.1rem;
     background-color: var(--btn-bg);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: background 0.3s, transform 0.1s;
+    transition: all 0.2s;
+    font-weight: bold;
 }
 
 #generate-btn:hover {
     background-color: var(--btn-hover);
+    box-shadow: 0 5px 15px var(--shadow);
 }
 
 #generate-btn:active {
