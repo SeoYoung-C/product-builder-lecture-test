@@ -3,49 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tonight's Dinner Picker</title>
+    <title>Tonight's Dinner Picker | Dinner Pick</title>
+    <meta name="description" content="Get dinner recommendations by cuisine and mood, and explore menu guides, policies, and contact information.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        <div class="language-switch">
-            <a href="./index.html" class="lang-link">한국어</a>
-        </div>
-        <button id="theme-toggle" class="theme-btn">🌙</button>
-        <h1>What should I eat tonight?</h1>
-        <p class="subtitle">Pick your preferences and get a dinner recommendation.</p>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="header-inner">
+                <a href="./index-en.html" class="brand">Dinner Pick</a>
+                <nav class="top-nav" aria-label="Main menu">
+                    <a href="./index-en.html" class="active">Home</a>
+                    <a href="./menus-en.html">Menu Library</a>
+                    <a href="./guides-en.html">Guides</a>
+                    <a href="./about-en.html">About</a>
+                    <a href="./contact-en.html">Contact</a>
+                    <a href="./index.html">한국어</a>
+                </nav>
+            </div>
+        </header>
 
-        <div class="controls">
-            <label class="control">
-                <span>Cuisine</span>
-                <select id="cuisine-select">
-                    <option value="all">All</option>
-                    <option value="Korean">Korean</option>
-                    <option value="Chinese">Chinese</option>
-                    <option value="Japanese">Japanese</option>
-                    <option value="Western">Western</option>
-                    <option value="Street Food">Street Food</option>
-                    <option value="Fast Food">Fast Food</option>
-                </select>
-            </label>
+        <main class="page-main">
+            <section class="recommendation-wrap">
+                <div id="app">
+                    <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">🌙</button>
+                    <h1>What should I eat tonight?</h1>
+                    <p class="subtitle">Pick your preferences and get a dinner recommendation.</p>
 
-            <label class="control">
-                <span>Mood</span>
-                <select id="mood-select">
-                    <option value="all">Any</option>
-                    <option value="Hearty">Hearty</option>
-                    <option value="Light">Light</option>
-                    <option value="Warm">Warm</option>
-                    <option value="Spicy">Spicy</option>
-                </select>
-            </label>
-        </div>
+                    <div class="controls">
+                        <label class="control">
+                            <span>Cuisine</span>
+                            <select id="cuisine-select">
+                                <option value="all">All</option>
+                                <option value="Korean">Korean</option>
+                                <option value="Chinese">Chinese</option>
+                                <option value="Japanese">Japanese</option>
+                                <option value="Western">Western</option>
+                                <option value="Street Food">Street Food</option>
+                                <option value="Fast Food">Fast Food</option>
+                            </select>
+                        </label>
 
-        <div id="dinner-result">
-            <p>Click the button to get tonight's dinner recommendation.</p>
-        </div>
-        <button id="generate-btn">Recommend Dinner</button>
+                        <label class="control">
+                            <span>Mood</span>
+                            <select id="mood-select">
+                                <option value="all">Any</option>
+                                <option value="Hearty">Hearty</option>
+                                <option value="Light">Light</option>
+                                <option value="Warm">Warm</option>
+                                <option value="Spicy">Spicy</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div id="dinner-result">
+                        <p>Click the button to get tonight's dinner recommendation.</p>
+                    </div>
+                    <button id="generate-btn">Recommend Dinner</button>
+                </div>
+            </section>
+
+            <section class="home-highlights">
+                <article class="highlight-card">
+                    <h3>Menu Library</h3>
+                    <p>Browse 100+ menu options with cuisine, mood tags, and practical context notes.</p>
+                    <a href="./menus-en.html">Explore library</a>
+                </article>
+                <article class="highlight-card">
+                    <h3>Decision Guides</h3>
+                    <p>Read curated guides for solo dinner, rainy days, budget meals, and late-night picks.</p>
+                    <a href="./guides-en.html">Read guides</a>
+                </article>
+                <article class="highlight-card">
+                    <h3>Site Policies</h3>
+                    <p>Check who runs this site, privacy handling, and terms before using recommendations.</p>
+                    <a href="./privacy-en.html">View policy</a>
+                </article>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <p class="footer-note">Dinner Pick is an informational recommendation service for meal planning.</p>
+                <div class="footer-links">
+                    <a href="./about-en.html">About</a>
+                    <a href="./contact-en.html">Contact</a>
+                    <a href="./privacy-en.html">Privacy</a>
+                    <a href="./terms-en.html">Terms</a>
+                    <a href="./index.html">Korean Version</a>
+                </div>
+            </div>
+        </footer>
     </div>
+
+    <script src="page-theme.js"></script>
+    <script src="menu-data-en.js"></script>
     <script src="main-en.js"></script>
 </body>
 </html>

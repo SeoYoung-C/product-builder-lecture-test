@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴 라이브러리 | Dinner Pick</title>
+    <meta name="description" content="100개 이상의 저녁 메뉴를 카테고리, 기분, 키워드로 탐색하고 실전 선택 팁을 확인하세요.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="header-inner">
+                <a href="./index.html" class="brand">Dinner Pick</a>
+                <nav class="top-nav" aria-label="주요 메뉴">
+                    <a href="./index.html">홈</a>
+                    <a href="./menus.html" class="active">메뉴 라이브러리</a>
+                    <a href="./guides.html">추천 가이드</a>
+                    <a href="./about.html">소개</a>
+                    <a href="./contact.html">문의</a>
+                    <a href="./menus-en.html">English</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="page-main">
+            <section class="page-card">
+                <h1>메뉴 라이브러리</h1>
+                <p class="page-intro">카테고리와 기분에 맞는 메뉴를 빠르게 찾을 수 있도록 100개 이상의 저녁 옵션을 정리했습니다. 가격대와 상황별 코멘트를 함께 확인해보세요.</p>
+
+                <div class="filters-inline">
+                    <select id="library-cuisine">
+                        <option value="all">전체 카테고리</option>
+                        <option value="한식">한식</option>
+                        <option value="중식">중식</option>
+                        <option value="일식">일식</option>
+                        <option value="양식">양식</option>
+                        <option value="분식">분식</option>
+                        <option value="패스트푸드">패스트푸드</option>
+                    </select>
+                    <select id="library-mood">
+                        <option value="all">전체 기분</option>
+                        <option value="든든한">든든한</option>
+                        <option value="가벼운">가벼운</option>
+                        <option value="따뜻한">따뜻한</option>
+                        <option value="매운">매운</option>
+                    </select>
+                    <input id="library-search" type="search" placeholder="메뉴 검색 (예: 찌개, 면, 치킨)">
+                </div>
+
+                <p id="library-count" class="page-intro"></p>
+                <div id="menu-grid" class="menu-grid"></div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <p class="footer-note">정보는 일반적인 식사 선택을 위한 가이드이며, 매장별 가격과 구성은 다를 수 있습니다.</p>
+                <div class="footer-links">
+                    <a href="./about.html">About</a>
+                    <a href="./contact.html">Contact</a>
+                    <a href="./privacy.html">Privacy</a>
+                    <a href="./terms.html">Terms</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="page-theme.js"></script>
+    <script src="menu-data-ko.js"></script>
+    <script src="menu-library.js"></script>
+</body>
+</html>

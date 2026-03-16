@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Library | Dinner Pick</title>
+    <meta name="description" content="Explore 100+ dinner options with cuisine tags, mood filters, and practical notes.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="header-inner">
+                <a href="./index-en.html" class="brand">Dinner Pick</a>
+                <nav class="top-nav" aria-label="Main menu">
+                    <a href="./index-en.html">Home</a>
+                    <a href="./menus-en.html" class="active">Menu Library</a>
+                    <a href="./guides-en.html">Guides</a>
+                    <a href="./about-en.html">About</a>
+                    <a href="./contact-en.html">Contact</a>
+                    <a href="./menus.html">한국어</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="page-main">
+            <section class="page-card">
+                <h1>Menu Library</h1>
+                <p class="page-intro">This library groups 100+ dinner options by cuisine and mood so you can decide faster. Each card includes practical context and a rough budget range.</p>
+
+                <div class="filters-inline">
+                    <select id="library-cuisine">
+                        <option value="all">All cuisines</option>
+                        <option value="Korean">Korean</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Western">Western</option>
+                        <option value="Street Food">Street Food</option>
+                        <option value="Fast Food">Fast Food</option>
+                    </select>
+                    <select id="library-mood">
+                        <option value="all">All moods</option>
+                        <option value="Hearty">Hearty</option>
+                        <option value="Light">Light</option>
+                        <option value="Warm">Warm</option>
+                        <option value="Spicy">Spicy</option>
+                    </select>
+                    <input id="library-search" type="search" placeholder="Search menu (e.g. soup, rice, chicken)">
+                </div>
+
+                <p id="library-count" class="page-intro"></p>
+                <div id="menu-grid" class="menu-grid"></div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <p class="footer-note">Details are for general meal planning; pricing and availability can vary by restaurant and region.</p>
+                <div class="footer-links">
+                    <a href="./about-en.html">About</a>
+                    <a href="./contact-en.html">Contact</a>
+                    <a href="./privacy-en.html">Privacy</a>
+                    <a href="./terms-en.html">Terms</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="page-theme.js"></script>
+    <script src="menu-data-en.js"></script>
+    <script src="menu-library-en.js"></script>
+</body>
+</html>

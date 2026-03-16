@@ -3,49 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>오늘 저녁 추천</title>
+    <title>오늘 저녁 추천 | Dinner Pick</title>
+    <meta name="description" content="카테고리와 기분에 맞춰 오늘 저녁 메뉴를 추천받고, 메뉴 라이브러리와 상황별 가이드를 확인해보세요.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
-        <div class="language-switch">
-            <a href="./index-en.html" class="lang-link">English</a>
-        </div>
-        <button id="theme-toggle" class="theme-btn">🌙</button>
-        <h1>오늘 저녁 뭐 먹지?</h1>
-        <p class="subtitle">원하는 조건을 고르고 메뉴를 추천받아보세요.</p>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="header-inner">
+                <a href="./index.html" class="brand">Dinner Pick</a>
+                <nav class="top-nav" aria-label="주요 메뉴">
+                    <a href="./index.html" class="active">홈</a>
+                    <a href="./menus.html">메뉴 라이브러리</a>
+                    <a href="./guides.html">추천 가이드</a>
+                    <a href="./about.html">소개</a>
+                    <a href="./contact.html">문의</a>
+                    <a href="./index-en.html">English</a>
+                </nav>
+            </div>
+        </header>
 
-        <div class="controls">
-            <label class="control">
-                <span>음식 종류</span>
-                <select id="cuisine-select">
-                    <option value="all">전체</option>
-                    <option value="한식">한식</option>
-                    <option value="중식">중식</option>
-                    <option value="일식">일식</option>
-                    <option value="양식">양식</option>
-                    <option value="분식">분식</option>
-                    <option value="패스트푸드">패스트푸드</option>
-                </select>
-            </label>
+        <main class="page-main">
+            <section class="recommendation-wrap">
+                <div id="app">
+                    <button id="theme-toggle" class="theme-btn" aria-label="테마 전환">🌙</button>
+                    <h1>오늘 저녁 뭐 먹지?</h1>
+                    <p class="subtitle">원하는 조건을 고르고 메뉴를 추천받아보세요.</p>
 
-            <label class="control">
-                <span>오늘 기분</span>
-                <select id="mood-select">
-                    <option value="all">상관없음</option>
-                    <option value="든든한">든든한</option>
-                    <option value="가벼운">가벼운</option>
-                    <option value="따뜻한">따뜻한</option>
-                    <option value="매운">매운</option>
-                </select>
-            </label>
-        </div>
+                    <div class="controls">
+                        <label class="control">
+                            <span>음식 종류</span>
+                            <select id="cuisine-select">
+                                <option value="all">전체</option>
+                                <option value="한식">한식</option>
+                                <option value="중식">중식</option>
+                                <option value="일식">일식</option>
+                                <option value="양식">양식</option>
+                                <option value="분식">분식</option>
+                                <option value="패스트푸드">패스트푸드</option>
+                            </select>
+                        </label>
 
-        <div id="dinner-result">
-            <p>버튼을 눌러 오늘의 저녁 메뉴를 추천받으세요.</p>
-        </div>
-        <button id="generate-btn">저녁 추천받기</button>
+                        <label class="control">
+                            <span>오늘 기분</span>
+                            <select id="mood-select">
+                                <option value="all">상관없음</option>
+                                <option value="든든한">든든한</option>
+                                <option value="가벼운">가벼운</option>
+                                <option value="따뜻한">따뜻한</option>
+                                <option value="매운">매운</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div id="dinner-result">
+                        <p>버튼을 눌러 오늘의 저녁 메뉴를 추천받으세요.</p>
+                    </div>
+                    <button id="generate-btn">저녁 추천받기</button>
+                </div>
+            </section>
+
+            <section class="home-highlights">
+                <article class="highlight-card">
+                    <h3>메뉴 라이브러리</h3>
+                    <p>100개 이상의 메뉴를 카테고리, 기분, 예산 기준으로 탐색할 수 있습니다.</p>
+                    <a href="./menus.html">라이브러리 보기</a>
+                </article>
+                <article class="highlight-card">
+                    <h3>상황별 가이드</h3>
+                    <p>혼밥, 야식, 비 오는 날, 다이어트 중 등 상황별 저녁 추천 글을 모았습니다.</p>
+                    <a href="./guides.html">가이드 읽기</a>
+                </article>
+                <article class="highlight-card">
+                    <h3>운영 정책</h3>
+                    <p>운영 원칙, 개인정보 처리, 문의 방법을 한 번에 확인할 수 있습니다.</p>
+                    <a href="./privacy.html">정책 확인</a>
+                </article>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-inner">
+                <p class="footer-note">Dinner Pick은 식사 선택을 돕기 위한 정보형 추천 서비스입니다.</p>
+                <div class="footer-links">
+                    <a href="./about.html">About</a>
+                    <a href="./contact.html">Contact</a>
+                    <a href="./privacy.html">Privacy</a>
+                    <a href="./terms.html">Terms</a>
+                    <a href="./index-en.html">English Version</a>
+                </div>
+            </div>
+        </footer>
     </div>
+
+    <script src="page-theme.js"></script>
+    <script src="menu-data-ko.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
