@@ -28,11 +28,51 @@
         <main class="page-main">
             <section class="page-card legal-content">
                 <h1>문의 및 피드백</h1>
-                <p class="page-intro">오탈자 제보, 메뉴 추가 제안, 정책 관련 문의는 아래 채널로 접수해 주세요.</p>
+                <p class="page-intro">오탈자 제보, 메뉴 추가 제안, 정책 관련 문의는 아래 폼으로 접수해 주세요.</p>
 
-                <h2>문의 채널</h2>
+                <h2>문의 폼</h2>
+                <form class="contact-form" action="https://formspree.io/f/mzdjjggl" method="POST">
+                    <input type="hidden" name="_subject" value="[Dinner Pick KR] New inquiry">
+                    <input type="hidden" name="language" value="ko">
+                    <div class="hp-field-wrapper" aria-hidden="true">
+                        <label for="contact-company">회사명</label>
+                        <input id="contact-company" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contact-name">이름</label>
+                        <input id="contact-name" name="name" type="text" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contact-email">이메일</label>
+                        <input id="contact-email" name="email" type="email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contact-type">문의 유형</label>
+                        <select id="contact-type" name="inquiry_type" required>
+                            <option value="">선택해 주세요</option>
+                            <option value="content-feedback">콘텐츠 피드백</option>
+                            <option value="menu-request">메뉴 추가 제안</option>
+                            <option value="bug-report">오류/오탈자 제보</option>
+                            <option value="adsense">광고/제휴 문의</option>
+                            <option value="other">기타</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contact-message">문의 내용</label>
+                        <textarea id="contact-message" name="message" rows="7" required placeholder="문의 내용을 자세히 입력해 주세요."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">문의 전송</button>
+                </form>
+
+                <p class="form-meta">전송 시 Formspree를 통해 운영자에게 이메일로 전달됩니다.</p>
+
+                <h2>처리 가능한 문의</h2>
                 <ul>
-                    <li>GitHub Issues: <a href="https://github.com/SeoYoung-C/product-builder-lecture-test/issues" target="_blank" rel="noopener noreferrer">product-builder-lecture-test/issues</a></li>
                     <li>기능 개선 제안: 메뉴 라이브러리 카테고리/필터 개선 요청 가능</li>
                     <li>콘텐츠 제보: 지역별 메뉴/가격대 정보 업데이트 제안 가능</li>
                 </ul>

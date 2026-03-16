@@ -28,11 +28,51 @@
         <main class="page-main">
             <section class="page-card legal-content">
                 <h1>Contact and Feedback</h1>
-                <p class="page-intro">Use the channels below for typo reports, content feedback, and menu coverage suggestions.</p>
+                <p class="page-intro">Use the form below for typo reports, content feedback, and menu coverage suggestions.</p>
 
-                <h2>Contact channel</h2>
+                <h2>Contact form</h2>
+                <form class="contact-form" action="https://formspree.io/f/mzdjjggl" method="POST">
+                    <input type="hidden" name="_subject" value="[Dinner Pick EN] New inquiry">
+                    <input type="hidden" name="language" value="en">
+                    <div class="hp-field-wrapper" aria-hidden="true">
+                        <label for="contact-company-en">Company</label>
+                        <input id="contact-company-en" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contact-name-en">Name</label>
+                        <input id="contact-name-en" name="name" type="text" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contact-email-en">Email</label>
+                        <input id="contact-email-en" name="email" type="email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contact-type-en">Inquiry type</label>
+                        <select id="contact-type-en" name="inquiry_type" required>
+                            <option value="">Select one</option>
+                            <option value="content-feedback">Content feedback</option>
+                            <option value="menu-request">Menu suggestion</option>
+                            <option value="bug-report">Bug or typo report</option>
+                            <option value="adsense">Ads or partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contact-message-en">Message</label>
+                        <textarea id="contact-message-en" name="message" rows="7" required placeholder="Please describe your request in detail."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">Send inquiry</button>
+                </form>
+
+                <p class="form-meta">Submissions are delivered to the operator through Formspree email forwarding.</p>
+
+                <h2>Supported requests</h2>
                 <ul>
-                    <li>GitHub Issues: <a href="https://github.com/SeoYoung-C/product-builder-lecture-test/issues" target="_blank" rel="noopener noreferrer">product-builder-lecture-test/issues</a></li>
                     <li>Feature feedback: library structure, filters, navigation quality</li>
                     <li>Content updates: menu additions, corrections, wording fixes</li>
                 </ul>
