@@ -1,19 +1,25 @@
 :root {
-    --bg-color: #f8f9fa;
-    --text-color: #333;
-    --card-bg: white;
-    --shadow: rgba(0, 0, 0, 0.1);
-    --btn-bg: #1a73e8;
-    --btn-hover: #1557b0;
+    --bg-color: #f7f5ef;
+    --text-color: #2f2b28;
+    --card-bg: #fffdf8;
+    --shadow: rgba(53, 45, 38, 0.18);
+    --btn-bg: #f08b2f;
+    --btn-hover: #de7620;
+    --border-color: #e5ded3;
+    --control-bg: #fff;
+    --muted: #8b7f72;
 }
 
 body.dark-mode {
-    --bg-color: #121212;
-    --text-color: #f1f1f1;
-    --card-bg: #1e1e1e;
-    --shadow: rgba(0, 0, 0, 0.5);
-    --btn-bg: #37474f;
-    --btn-hover: #455a64;
+    --bg-color: #141210;
+    --text-color: #f4f1ec;
+    --card-bg: #26211d;
+    --shadow: rgba(0, 0, 0, 0.45);
+    --btn-bg: #ff9f45;
+    --btn-hover: #f0871e;
+    --border-color: #463c35;
+    --control-bg: #1b1714;
+    --muted: #baa99a;
 }
 
 body {
@@ -21,30 +27,33 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
+    padding: 24px;
 }
 
 #app {
-    position: relative; /* 버튼 배치를 위해 추가 */
+    position: relative;
     text-align: center;
-    padding: 4rem 3rem 3rem 3rem; /* 상단 여백 추가 */
+    padding: 4rem 2rem 2rem;
     background: var(--card-bg);
-    border-radius: 20px;
-    box-shadow: 0 10px 30px var(--shadow);
+    border-radius: 24px;
+    box-shadow: 0 16px 40px var(--shadow);
     transition: all 0.3s;
-    min-width: 320px;
+    width: 100%;
+    max-width: 540px;
+    border: 1px solid var(--border-color);
 }
 
 .theme-btn {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: var(--bg-color);
-    border: 1px solid var(--text-color);
+    background: var(--control-bg);
+    border: 1px solid var(--border-color);
     color: var(--text-color);
     font-size: 1.2rem;
     cursor: pointer;
@@ -63,38 +72,80 @@ body {
 }
 
 h1 {
-    margin-bottom: 2rem;
-    font-size: 1.8rem;
+    margin: 0;
+    font-size: 2rem;
 }
 
-#lotto-container {
-    display: flex;
-    justify-content: center;
+.subtitle {
+    margin-top: 0.8rem;
+    margin-bottom: 1.8rem;
+    color: var(--muted);
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
-    margin-bottom: 2.5rem;
-    min-height: 60px;
-    flex-wrap: wrap; /* 모바일 대응 */
+    margin-bottom: 1.2rem;
 }
 
-.ball {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+.control {
+    text-align: left;
+}
+
+.control span {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.control select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-color: var(--control-bg);
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+#dinner-result {
+    min-height: 170px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    color: white;
-    font-weight: bold;
-    font-size: 1.1rem;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    animation: bounce 0.5s ease;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+    border-radius: 16px;
+    border: 1px dashed var(--border-color);
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.08));
+    padding: 14px;
 }
 
-.ball-yellow { background-color: #fbc400; }
-.ball-blue { background-color: #69c8f2; }
-.ball-red { background-color: #ff7272; }
-.ball-gray { background-color: #aaa; }
-.ball-green { background-color: #b0d840; }
+.result-card {
+    animation: reveal 0.35s ease;
+}
+
+.result-emoji {
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+.result-card h2 {
+    margin: 0.5rem 0 0.4rem;
+}
+
+.result-meta {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.fallback {
+    margin-top: 0.9rem;
+    font-size: 0.86rem;
+    color: var(--muted);
+}
 
 #generate-btn {
     padding: 14px 28px;
@@ -117,8 +168,23 @@ h1 {
     transform: scale(0.95);
 }
 
-@keyframes bounce {
-    0% { transform: scale(0); }
-    70% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 520px) {
+    #app {
+        padding: 3.6rem 1.2rem 1.5rem;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
 }

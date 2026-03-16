@@ -3,17 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로또 번호 추첨기</title>
+    <title>오늘 저녁 추천</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="app">
         <button id="theme-toggle" class="theme-btn">🌙</button>
-        <h1>로또 번호 추첨기</h1>
-        <div id="lotto-container">
-            <p>버튼을 눌러 번호를 추첨하세요!</p>
+        <h1>오늘 저녁 뭐 먹지?</h1>
+        <p class="subtitle">원하는 조건을 고르고 메뉴를 추천받아보세요.</p>
+
+        <div class="controls">
+            <label class="control">
+                <span>음식 종류</span>
+                <select id="cuisine-select">
+                    <option value="all">전체</option>
+                    <option value="한식">한식</option>
+                    <option value="중식">중식</option>
+                    <option value="일식">일식</option>
+                    <option value="양식">양식</option>
+                    <option value="분식">분식</option>
+                    <option value="패스트푸드">패스트푸드</option>
+                </select>
+            </label>
+
+            <label class="control">
+                <span>오늘 기분</span>
+                <select id="mood-select">
+                    <option value="all">상관없음</option>
+                    <option value="든든한">든든한</option>
+                    <option value="가벼운">가벼운</option>
+                    <option value="따뜻한">따뜻한</option>
+                    <option value="매운">매운</option>
+                </select>
+            </label>
         </div>
-        <button id="generate-btn">번호 추첨하기</button>
+
+        <div id="dinner-result">
+            <p>버튼을 눌러 오늘의 저녁 메뉴를 추천받으세요.</p>
+        </div>
+        <button id="generate-btn">저녁 추천받기</button>
     </div>
     <script src="main.js"></script>
 </body>
