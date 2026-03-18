@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dinner Pick favicon">
+  <rect width="64" height="64" rx="14" fill="#fff7ed"/>
+  <path d="M14 35h36c0 9.5-7.8 17-18 17s-18-7.5-18-17z" fill="#f97316"/>
+  <path d="M19 35h26" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M23 29c0-4.4 3.6-8 8-8h2c4.4 0 8 3.6 8 8" fill="#fdba74"/>
+  <path d="M18 22l21 8" stroke="#7c2d12" stroke-width="3" stroke-linecap="round"/>
+  <path d="M20 18l21 8" stroke="#9a3412" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="26" cy="30" r="1.7" fill="#7c2d12"/>
+  <circle cx="33" cy="28" r="1.5" fill="#7c2d12"/>
+  <circle cx="39" cy="31" r="1.6" fill="#7c2d12"/>
+</svg>
