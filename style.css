@@ -474,6 +474,98 @@ h1 {
     font-size: 0.88rem;
 }
 
+.breadcrumb {
+    margin-bottom: 12px;
+    font-size: 0.88rem;
+}
+
+.breadcrumb a {
+    color: var(--btn-bg);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.related-guides {
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.related-guides ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.related-guides li a {
+    color: var(--btn-bg);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.related-guides li a:hover {
+    text-decoration: underline;
+}
+
+.guide-card a.guide-read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--btn-bg);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.guide-card a.guide-read-more:hover {
+    text-decoration: underline;
+}
+
+.guide-card h3 a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.guide-card h3 a:hover {
+    color: var(--btn-bg);
+}
+
+.home-content {
+    margin-top: 24px;
+}
+
+.home-content .page-card p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.home-content .page-card a {
+    color: var(--btn-bg);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.home-content .page-card a:hover {
+    text-decoration: underline;
+}
+
+.cuisine-overview {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.legal-content h2 {
+    margin-top: 24px;
+}
+
+.legal-content h3 {
+    margin-top: 20px;
+}
+
 @keyframes reveal {
     from {
         opacity: 0;
